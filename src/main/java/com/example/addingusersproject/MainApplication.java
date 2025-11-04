@@ -1,8 +1,6 @@
 package com.example.addingusersproject;
 
 import javafx.application.Application;
-import javafx.fxml.FXMLLoader;
-import javafx.scene.Scene;
 import javafx.stage.Stage;
 
 import java.io.IOException;
@@ -10,11 +8,8 @@ import java.io.IOException;
 public class MainApplication extends Application {
     @Override
     public void start(Stage stage) throws IOException {
-        FXMLLoader fxmlLoader = new FXMLLoader(MainApplication.class.getResource("principal-view.fxml"));
-        Scene scene = new Scene(fxmlLoader.load(), 320, 240);
-        stage.setTitle("Create User");
-        stage.setScene(scene);
-        stage.show();
+        SceneManager.setStage(stage);
+        SceneManager.changeScene("principal-view.fxml", "Principal View");
     }
 
     public static void main(String[] args) {

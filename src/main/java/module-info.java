@@ -12,4 +12,7 @@ module com.example.addingusersproject {
 
     opens com.example.addingusersproject.controllers to javafx.fxml;
     exports com.example.addingusersproject.controllers;
+
+    opens models to javafx.fxml;
+    exports models;
 }

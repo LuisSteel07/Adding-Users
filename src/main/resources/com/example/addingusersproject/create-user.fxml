@@ -13,11 +13,20 @@
         <Insets bottom="20.0" left="20.0" right="20.0" top="20.0"/>
     </padding>
 
-    <Label fx:id="title" style="-fx-text-fill: red; -fx-font-size: 20; -fx-font-weight: 900"/>
-    <TextField fx:id="name" style="-fx-start-margin: 10; -fx-max-width: 250"/>
-    <TextField fx:id="age" style="-fx-start-margin: 10; -fx-max-width: 250"/>
-    <TextField fx:id="email" style="-fx-start-margin: 10; -fx-max-width: 250"/>
-    <TextField fx:id="password" style="-fx-start-margin: 10; -fx-max-width: 250"/>
+    <Button text="←" fx:id="backToHome" onAction="#backToHome" style="-fx-start-margin: 10"/>
+    <Label text="Create User" fx:id="title" style="-fx-text-fill: red; -fx-font-size: 20; -fx-font-weight: 900"/>
+
+    <VBox>
+        <Label text="Name" fx:id="nameLabel" style="-fx-font-weight: 500"/>
+        <TextField  fx:id="name" style="-fx-start-margin: 10; -fx-max-width: 250"/>
+        <Label text="Age" fx:id="ageLabel" style="-fx-font-weight: 500"/>
+        <TextField fx:id="age" style="-fx-start-margin: 10; -fx-max-width: 250"/>
+        <Label text="Email" fx:id="emailLabel" style="-fx-font-weight: 500"/>
+        <TextField fx:id="email" style="-fx-start-margin: 10; -fx-max-width: 250"/>
+        <Label text="Password" fx:id="passwordLabel" style="-fx-font-weight: 500"/>
+        <TextField fx:id="password" style="-fx-start-margin: 10; -fx-max-width: 250"/>
+    </VBox>
+
     <Button text="Create User" onAction="#createUser" style="-fx-start-margin: 10"/>
     <Label fx:id="message" style="-fx-text-fill: green; -fx-font-weight: 900; -fx-font-size: 20; -fx-start-margin: 10"/>
 
