@@ -30,7 +30,11 @@ public class PrincipalViewController {
     }
 
     @FXML
-    protected void onHelloButtonClick() {
+    protected void onCreateButton() {
         SceneManager.changeScene("create-user.fxml", "Create User");
+    }
+
+    public void onSearchButton() {
+        SceneManager.changeScene("search-user.fxml", "Search User");
     }
 }
