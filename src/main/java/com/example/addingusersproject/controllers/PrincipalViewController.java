@@ -19,14 +19,18 @@ public class PrincipalViewController {
     @FXML private TableColumn<User, String> passwordColumn;
 
     public void initialize() {
+        initializeTableColumn(idColumn, nameColumn, ageColumn, emailColumn, passwordColumn);
+
+        ObservableList<User> users = FXCollections.observableList(userDAO.listAll());
+        userTable.setItems(users);
+    }
+
+    static void initializeTableColumn(TableColumn<User, Integer> idColumn, TableColumn<User, String> nameColumn, TableColumn<User, Integer> ageColumn, TableColumn<User, String> emailColumn, TableColumn<User, String> passwordColumn) {
         idColumn.setCellValueFactory(new PropertyValueFactory<>("id"));
         nameColumn.setCellValueFactory(new PropertyValueFactory<>("name"));
         ageColumn.setCellValueFactory(new PropertyValueFactory<>("age"));
         emailColumn.setCellValueFactory(new PropertyValueFactory<>("email"));
         passwordColumn.setCellValueFactory(new PropertyValueFactory<>("password"));
-
-        ObservableList<User> users = FXCollections.observableList(userDAO.listAll());
-        userTable.setItems(users);
     }
 
     @FXML

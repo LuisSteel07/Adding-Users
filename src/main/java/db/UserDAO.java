@@ -30,6 +30,29 @@ public class UserDAO {
         return null;
     }
 
+    public User getByName(String name) {
+        String sql = "SELECT * FROM users WHERE name = ?";
+        try (Connection conn = ConnectionDB.getConnection();
+             PreparedStatement stmt = conn.prepareStatement(sql)) {
+
+            stmt.setString(1, name);
+            ResultSet rs = stmt.executeQuery();
+
+            if (rs.next()) {
+                return new User(
+                        rs.getInt("id"),
+                        rs.getString("name"),
+                        rs.getInt("age"),
+                        rs.getString("email"),
+                        rs.getString("password")
+                );
+            }
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }
+        return null;
+    }
+
     public List<User> listAll() {
         List<User> lista = new ArrayList<>();
         String sql = "SELECT * FROM users";
