@@ -25,7 +25,7 @@ public class UserDAO {
                 );
             }
         } catch (SQLException e) {
-            e.printStackTrace();
+            System.out.println(e.getMessage());
         }
         return null;
     }
@@ -48,7 +48,7 @@ public class UserDAO {
                 );
             }
         } catch (SQLException e) {
-            e.printStackTrace();
+            System.out.println(e.getMessage());
         }
         return null;
     }
@@ -71,7 +71,7 @@ public class UserDAO {
                 ));
             }
         } catch (SQLException e) {
-            e.printStackTrace();
+            System.out.println(e.getMessage());
         }
         return lista;
     }
@@ -88,8 +88,21 @@ public class UserDAO {
             return stmt.executeUpdate() > 0;
 
         } catch (SQLException e) {
-            e.printStackTrace();
+            System.out.println(e.getMessage());
         }
         return false;
+    }
+
+    public void delete(int id) {
+        String sql = "DELETE FROM users WHERE id = ?";
+        try (Connection conn = ConnectionDB.getConnection();
+             PreparedStatement stmt = conn.prepareStatement(sql)) {
+
+            stmt.setInt(1, id);
+            stmt.executeQuery();
+
+        } catch (SQLException e) {
+            System.out.println(e.getMessage());
+        }
     }
 }

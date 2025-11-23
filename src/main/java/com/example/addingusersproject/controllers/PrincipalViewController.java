@@ -41,4 +41,8 @@ public class PrincipalViewController {
     public void onSearchButton() {
         SceneManager.changeScene("search-user.fxml", "Search User");
     }
+
+    public void onDeleteButton() {
+        SceneManager.changeScene("delete-user.fxml", "Delete User");
+    }
 }

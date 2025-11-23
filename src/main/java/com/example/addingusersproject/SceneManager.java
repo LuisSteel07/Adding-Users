@@ -23,7 +23,7 @@ public class SceneManager {
             primaryStage.setTitle(title);
             primaryStage.show();
         } catch (IOException e) {
-            e.printStackTrace();
+            System.out.println(e.getMessage());
         }
     }
 
