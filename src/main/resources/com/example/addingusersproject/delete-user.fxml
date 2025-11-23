@@ -4,9 +4,10 @@
 <?import javafx.scene.layout.*?>
 
 <VBox prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/25" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.addingusersproject.controllers.DeleteUser">
+    <Label style="-fx-text-fill: red; -fx-font-size: 20; -fx-font-weight: 900" text="Delete User" />
     <Pane prefHeight="400.0" prefWidth="600.0">
         <Button layoutX="14.0" layoutY="22.0" mnemonicParsing="false" onAction="#backToHome" text="←" />
-        <TextField fx:id="searchInput" layoutX="74.0" layoutY="22.0" promptText="Search By User Name" />
+        <TextField fx:id="searchInput" layoutX="74.0" layoutY="22.0" promptText="Search By User Name to Delete" />
         <Button layoutX="234.0" layoutY="22.0" mnemonicParsing="false" onAction="#searchUser" text="Search" />
         <Label fx:id="errorMessage" visible="false" layoutX="14.0" layoutY="69.0" style="-fx-text-fill: red; -fx-font-size: 20; -fx-font-weight: 900" />
     </Pane>
